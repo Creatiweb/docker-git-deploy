@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#Setup .ssh folder
+mkdir -p ~/.ssh
+chmod 400 ~/.ssh
+
+#Setup ssh config
+cat <<EOT >> ~/.ssh/config
+Host *
+RequestTTY yes
+IdentityFile ~/.ssh/id_rsa
+StrictHostKeyChecking=no
+BatchMode=yes
+EOT
